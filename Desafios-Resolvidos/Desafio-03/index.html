@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 03</title>
+</head> 
+<style>
+    input{
+        height: 50px;
+    }
+</style>
+<body>
+    <h1>Antecessores e sucessores de um número</h1>
+    <input type="button" value="Clique aqui para iniciar" onclick="number()"> 
+    <div id="res"></div>
+<script>
+    function number() {  
+    var num = Number(window.prompt('Digite um número inteiro qualquer')) 
+    var res = document.querySelector('div#res')
+    res.innerHTML += `</br> O antecessor de ${num} é ${num - 1}. </br> O sucessor de ${num} é ${num + 1}.` 
+    }
+</script>
+</body>  
+</html>
+   
+
