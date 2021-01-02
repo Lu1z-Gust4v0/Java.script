@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 05</title>
+</head> 
+<style>
+    body {
+        background-color: blue;
+    }
+    h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+    .button:hover{
+        background-color: rgba(32, 250, 43, 0.2);
+    }
+    section {
+        width: 500px;
+        background-color: white;
+        border-radius: 10px;
+        margin: auto;
+        box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.562);
+        padding: 20px ;
+    }
+</style>
+<body>
+    <section>
+        <h1>Conversor de Medidas</h1>
+        <p>Digite um valor e ele será convertido em outras medidas</p>
+        <input type="number" name="number" id="number" placeholder="Digite um valor" min="0">
+        <input class="button"type="button" value="Calcular" onclick="Calcular()">
+    <div id="res"></div> 
+    </section>
+</body> 
+<script>
+    var valor = document.querySelector("input#number")
+    var res = document.querySelector("div#res")
+    function Calcular(){
+        if (valor.value <= 0) {
+            res.innerHTML += `[ERRO] O valor ${valor.value} é invalido. `
+            valor.value = ""
+            valor.focus() 
+            location.reload()
+        } else {res.innerHTML += `<strong>A distância de ${valor.value } em metros, corresponde a:</strong> 
+        <br> ${valor.value / 1000} Quilômetros (Km) <br> ${valor.value / 100} Hectômetros (Hm)
+        <br> ${valor.value / 10} Decâmetros (Dam) <br> ${valor.value * 10} Decímetros (Dm)
+        <br> ${valor.value * 100} Centímetros (Cm) <br> ${valor.value * 1000} Milímetros (mm)`
+        valor.value = ""
+        valor.focus() 
+        }  
+    }
+</script>
+</html>
